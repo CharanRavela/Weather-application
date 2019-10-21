@@ -1,5 +1,6 @@
 body{
     color: #333333;
+    background-color: lightgreen;
     font-family: arial;
     max-width: 650px;
     margin: 0 auto;
@@ -24,6 +25,7 @@ footer{
 header{
     margin-top: 16px;
     margin-bottom: 48px;
+    border-bottom: 1px solid #eeeeee;
 }
 
 h1{
@@ -41,15 +43,23 @@ header a{
     width: 250px;
 }
 
+.icon{
+    width: 64px;
+    margin-top: 16px;
+}
+
 input{
      border: 1px solid #cccccc;
+     border-radius: 15px;
      padding: 8px;
 }
 
 button{
     cursor: pointer;
     border: 1px solid #888888;
+    border-radius: 15px;
     background: #888888;
     color: white;
     padding: 8px;
 }
+

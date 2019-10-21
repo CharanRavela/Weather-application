@@ -23,22 +23,23 @@ app.use(express.static(pathPublic))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'charan'
+        name: 'charan Ravela'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about',{
         title: 'About Me',
-        name: 'Charan'
+        name: 'Charan Ravela'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        message: 'Help..!',
+        message: 'In this application you can get the details of Weather in your area........!!!',
+        contact: 'Contact mail id: redpoje.1@gmail.com',
         title: 'Help',
-        name:'Charan'
+        name:'Charan Ravela'
     })
 })
 
@@ -53,13 +54,14 @@ app.get('/weather',  (req, res) => {
         if(error){
             return res.send({error})
         }
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast(latitude, longitude, (error, {icon, units, summary}) => {
                   if(error){
                       return res.send({error})
                   }
 
                   res.send({
-                      forecast: forecastData,
+                      summary,
+                      icon,
                       location,
                       address: req.query.address
                   })
